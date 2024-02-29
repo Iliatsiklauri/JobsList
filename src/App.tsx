@@ -29,6 +29,7 @@ function App() {
   useEffect(() => {
     axios.get('data.json').then((data) => setData(data.data));
   }, []);
+
   const deleteDiv = (i: number) => {
     setInd(i);
     console.log(ind);
