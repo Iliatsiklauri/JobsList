@@ -34,7 +34,6 @@ function App() {
     const updatedSub = sub.filter((item) => item !== el);
     setSub(updatedSub);
   };
-
   const filterJobs =
     sub.length === 0
       ? data
