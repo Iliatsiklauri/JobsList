@@ -16,7 +16,7 @@ export type propType = {
   new: boolean;
   position: string;
   postedAt: string;
-  role?: string;
+  role: string;
   tools: string[];
   sub: string[];
   setSub: React.Dispatch<React.SetStateAction<string[]>>;
@@ -34,8 +34,25 @@ function App() {
     const updatedSub = sub.filter((item) => item !== el);
     setSub(updatedSub);
   };
+
+  const filterJobs =
+    sub.length === 0
+      ? data
+      : data?.filter((el) => {
+          return (
+            el.languages.some((element) => sub.includes(element)) ||
+            el.tools.some((element) => sub.includes(element)) ||
+            sub.includes(el.level) ||
+            sub.includes(el.role)
+          );
+        });
+
   return (
-    <div className="relative flex justify-center items-center  flex-col gap-14 bg-[#EFFAFA] pt-20">
+    <div
+      className={`relative flex justify-center items-center  flex-col gap-14 bg-[#EFFAFA]  min-h-[101vh] pt-60  md:pt-5 ${
+        sub.length > 0 ? 'pt-[100px]' : null
+      }`}
+    >
       <img
         src="images\bg-header-mobile.svg"
         alt=""
@@ -49,8 +66,12 @@ function App() {
       {sub.length > 0 ? (
         <Container deleteDiv={deleteDiv} setSub={setSub} sub={sub} />
       ) : null}
-      <div className={`w-full gap-10 flex flex-col items-center`}>
-        {data?.map((el: propType, key: number) => (
+      <div
+        className={`w-full gap-10 flex flex-col items-center ${
+          sub.length > 0 ? 'mt-[17px]' : ' md:mt-[250px]'
+        }`}
+      >
+        {filterJobs?.map((el: propType, key: number) => (
           <Child
             sub={sub}
             setSub={setSub}
