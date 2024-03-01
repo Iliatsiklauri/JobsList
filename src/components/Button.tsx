@@ -13,7 +13,7 @@ const Button = ({ text, sub, setSub }: prop) => {
 
   return (
     <div
-      className="bg-[#5CA5A5] rounded-md bg-opacity-10 p-2 text-center flex items-center justify-center font-bold text-[#5CA5A5]  h-8 "
+      className="bg-[#5CA5A5] rounded-md bg-opacity-10 p-2 text-center flex items-center justify-center font-bold text-[#5CA5A5]  h-8 cursor-pointer"
       onClick={() => setFunc(text)}
     >
       <p>{text}</p>
