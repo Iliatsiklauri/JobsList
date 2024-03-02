@@ -6,7 +6,7 @@ type propType = {
 
 const Container = ({ setSub, sub, deleteDiv }: propType) => {
   return (
-    <div className="rounded-md w-[90%] max-w-[1110px] flex bg-white shadow-lg p-6 items-center justify-between flex-wrap z-20">
+    <div className="rounded-md w-[90%] max-w-[1110px] flex bg-white shadow-lg p-6 items-center justify-between flex-wrap z-20  absolute  top-24">
       <div className="flex h-full flex-wrap gap-5 w-[85%]">
         {sub.map((el: string, key: number) => (
           <div

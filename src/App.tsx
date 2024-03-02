@@ -48,9 +48,7 @@ function App() {
 
   return (
     <div
-      className={`relative flex justify-center items-center  flex-col gap-14 bg-[#EFFAFA]  min-h-[101vh] pt-60  md:pt-5 ${
-        sub.length > 0 ? 'pt-[100px]' : null
-      }`}
+      className={`relative flex justify-center items-center  flex-col gap-14 bg-[#EFFAFA]  min-h-[101vh]`}
     >
       <img
         src="images\bg-header-mobile.svg"
@@ -65,11 +63,7 @@ function App() {
       {sub.length > 0 ? (
         <Container deleteDiv={deleteDiv} setSub={setSub} sub={sub} />
       ) : null}
-      <div
-        className={`w-full gap-10 flex flex-col items-center ${
-          sub.length > 0 ? 'mt-[17px]' : ' md:mt-[250px]'
-        }`}
-      >
+      <div className={`w-full gap-10 flex flex-col items-center mt-56 `}>
         {filterJobs?.map((el: propType, key: number) => (
           <Child
             sub={sub}
