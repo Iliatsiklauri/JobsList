@@ -63,7 +63,11 @@ function App() {
       {sub.length > 0 ? (
         <Container deleteDiv={deleteDiv} setSub={setSub} sub={sub} />
       ) : null}
-      <div className={`w-full gap-10 flex flex-col items-center mt-56 `}>
+      <div
+        className={`w-full gap-10 flex flex-col items-center mt-56 ${
+          sub.length > 3 ? 'mt-[380px] md:mt-56' : null
+        } `}
+      >
         {filterJobs?.map((el: propType, key: number) => (
           <Child
             sub={sub}
